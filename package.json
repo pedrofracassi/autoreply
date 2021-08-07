@@ -1,0 +1,28 @@
+{
+  "name": "autoreply",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js --enable-source-maps",
+    "dev": "rm -rf build/ && tsc-watch --onSuccess \"npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.4.13",
+    "@types/source-map-support": "^0.5.4",
+    "tsc-watch": "^4.4.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@google-cloud/dialogflow": "^4.1.4",
+    "@types/uuid": "^8.3.1",
+    "discord.js": "^13.0.0",
+    "dotenv": "^10.0.0",
+    "source-map-support": "^0.5.19",
+    "uuid": "^8.3.2"
+  }
+}
