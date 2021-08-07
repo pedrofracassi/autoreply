@@ -3,7 +3,7 @@ import dialogflow from "@google-cloud/dialogflow"
 import uuid from "uuid"
 import { randomUUID } from "crypto"
 
-const fallbackIntent = 'projects/inhouse-jim9/agent/intents/2b39d9a2-45ba-47b2-b947-18300baa540c'
+const fallbackIntent = process.env.DEFAULT_FALLBACK_INTENT_NAME!
 
 class Main {
   client: Client
@@ -108,7 +108,7 @@ class Main {
                     {
                       type: 'BUTTON',
                       label: '👍',
-                      customId: `upvote:projects/inhouse-jim9/agent/intents/b9af6b1e-e91a-4c50-853d-7c17b273c056`,
+                      customId: `upvote:${responses[0].queryResult?.intent?.name}`,
                       style: 'SECONDARY'
                     },
                     {
@@ -123,7 +123,6 @@ class Main {
             })
           }
         } catch (e) {
-          console.log(e)
         }
       }
     })
